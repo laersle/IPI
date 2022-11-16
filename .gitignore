@@ -3,5 +3,7 @@ cmake-build-debug/
 .idea/
 *.zip
 *.o
+a1
+a2
 a3
 a4
