@@ -13,9 +13,7 @@ bool summeteiler(int zahl, int summe, int teiler){
 }
 
 int main(){
-    int lim = 8128;
-    for(int i = 0; i <= lim; i++){
-        print(i);
-        print(vollkommen(i));
-    }
+    print(vollkommen(6));
+    print(vollkommen(5));
+    print(vollkommen(28));
 }
