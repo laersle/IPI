@@ -1,9 +1,28 @@
+#ignore Files with no extensions
+*	#ignore all
+!/	#dont ignore Directories
+!*.*	#dont ignore any Files with Fileexstension
+
+#Ignore CMake Files
 CMakeLists.txt
 cmake-build-debug/
 .idea/
+
+#Ignore Zip files
 *.zip
+
+#Ignore files ending in .o
 *.o
-a1
-a2
-a3
-a4
+
+#Ignore Outputfiles
+*a1
+*a1a
+*a1b
+*a1c
+*a1d
+*a2
+*a2a
+*a2b
+*a2c
+*a2d
+*a3
