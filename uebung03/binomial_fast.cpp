@@ -10,8 +10,7 @@ int fac(int n){
     return cond(n > 1, n*fac(n-1), n);
 }
 
-int main(){
-    print(binRecFast(215,122));
-    print(fac(12));
+int main(int argc, char** argv){
+    print(binRecFast(readarg_int(argc, argv, 1), readarg_int(argc, argv,2)));
     return 0;
 }

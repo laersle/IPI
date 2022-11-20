@@ -10,7 +10,7 @@ void printint(int a, int b){
     print(b);
 }
 
-int main(){
-    print(binRec(34,18));
+int main(int argc, char** argv){
+    print(binRec(readarg_int(argc, argv, 1), readarg_int(argc, argv,2)));
     return 0;
 }
