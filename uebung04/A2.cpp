@@ -1,6 +1,6 @@
 #include "fcpp.hh"
 
-float powerfloat(float b, int e){
+float powerfloat(float b, int e){ //calculates b^e as float
     if (e == 0) return 1;
 
     float result = 1;
@@ -9,7 +9,7 @@ float powerfloat(float b, int e){
     else return 1/result;
 }
 
-double powerdouble(double b, int e){
+double powerdouble(double b, int e){ //calculates b^e as double
     if (e == 0) return 1;
 
     double result = 1;
@@ -18,15 +18,33 @@ double powerdouble(double b, int e){
     else return 1/result;
 }
 
-float zinsf(float z, int n){
+float zinsf(float z, int n){ //calculate "zins" as float
     return powerfloat((1 + z / n), n) - 1;
 }
 
-double zinsd(double z, int n){
+double zinsd(double z, int n){ //calculate "zins" as double
     return powerdouble((1 + z / n), n) - 1;
 }
+
+void printFormattedInformation(int n){
+    print("-------------Anzahl Abrechnungsvorgaenge:", n, "-------------", 0);
+    print("Zinssatz (float):               ", zinsf(0.06, n), 0);
+    print("Differenz zu exp(z)-1 (double): ", (exp(zinsf(0.06, n))-1)-zinsf(0.06, n), 0);
+    print("Zinssatz (double):              ", zinsd(0.06, n), 0);
+    print("Differenz zu exp(z)-1 (double): ", (exp(zinsd(0.06, n))-1)-zinsd(0.06, n), 0);
+}
+
+//main -------------------------------------------------------------
 int main(){
-    print(zinsf(0.06, 3));
-    print(zinsd(0.06, 3));
+    printFormattedInformation(1);
+    printFormattedInformation(4);
+    printFormattedInformation(12);
+    printFormattedInformation(365);
+    printFormattedInformation(365*24);
+    printFormattedInformation(365*24*60);
+    printFormattedInformation(365*24*60*2);
+    printFormattedInformation(365*24*60*60);
+
+
     return 0;
 }
