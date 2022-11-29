@@ -23,8 +23,7 @@ float power(float b, int e){
 }
 
 int main(){
-    print(determinante(100, 0.01, -0.01, 100));
-    print(doubleDeterminante(100, 0.01, -0.01, 100));
+    print(determinante(100, 0.01, -0.01, 100), doubleDeterminante(100, 0.01, -0.01, 100), 0);
 
     for (int i = 6; i <= 14; ++i) {
         printAssoziativBerechnung(power(10,i), -power(10, i), power(10, -i));
