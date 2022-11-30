@@ -29,7 +29,7 @@ double zinsd(double z, int n){ //calculate "zins" as double
 void printFormattedInformation(int n){
     print("-------------Anzahl Abrechnungsvorgaenge:", n, "-------------", 0);
     print("Zinssatz (float):               ", zinsf(0.06, n), 0);
-    print("Differenz zu exp(z)-1 (double): ", (exp(zinsf(0.06, n))-1)-zinsf(0.06, n), 0);
+    print("Differenz zu exp(z)-1 (float ): ", (exp(zinsf(0.06, n))-1)-zinsf(0.06, n), 0);
     print("Zinssatz (double):              ", zinsd(0.06, n), 0);
     print("Differenz zu exp(z)-1 (double): ", (exp(zinsd(0.06, n))-1)-zinsd(0.06, n), 0);
 }
