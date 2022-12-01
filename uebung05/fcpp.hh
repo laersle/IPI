@@ -12,7 +12,7 @@ template<typename T>
 T print (T x) 
 {
   std::cout.precision(16);
-  std::cout << x << std::endl;
+  std::cout << x << std::flush;
   return x;
 }
 

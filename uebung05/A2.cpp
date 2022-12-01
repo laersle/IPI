@@ -1,0 +1,56 @@
+#include "fcpp.hh"
+
+//in der fcpp.hh wurde in der print-template funktion das std::endl in ein std::flush geändert damit der Output schöner formatiert werden kann
+
+int arr[10];
+
+void printarr(){
+    print('[');
+    for (int i = 0; i < 10 ; ++i) {
+        print(arr[i]);
+        print(", ");
+    }
+    print("]\n");
+}
+
+void sortarray(){ //bubble sort + then shift 0 to back
+    int temp;
+    for (int i = 0; i < 10; i++)
+    {
+        for (int j = 0; j + 1 < 10 - i; j++)
+        {
+            // Swaping the elements if first one
+            // is greater than second one.
+            if (arr[j] > arr[j + 1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+
+            }
+        }
+    }
+}
+
+void insertArray(int input){
+    for (int i = 0; i < 10; ++i) {
+        if(arr[i] == 0){
+            arr[i] = input;
+            break;
+        }
+
+    }
+    sortarray();
+}
+
+int main(){
+    for (int i = 0; i < 10; ++i){
+        int input = enter_int();
+        if (input == -1) return 0;
+        if (input < -1) print("Unerlaubte Eingabe!\n");
+        else if (input == 0) printarr();
+        else insertArray(input);
+    }
+    printarr();
+    return 0;
+}
