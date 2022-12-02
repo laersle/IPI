@@ -13,11 +13,11 @@ void printarr(){
     print("]\n");
 }
 
-void sortarray(){ //bubble sort + then shift 0 to back
+void sortarray(int lastplace){   //bubble sort up to the lastplace -> 0s will stay last
     int temp;
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < lastplace; i++)
     {
-        for (int j = 0; j + 1 < 10 - i; j++)
+        for (int j = 0; j + 1 < lastplace - i; j++)
         {
             // Swaping the elements if first one
             // is greater than second one.
@@ -33,14 +33,13 @@ void sortarray(){ //bubble sort + then shift 0 to back
 }
 
 void insertArray(int input){
-    for (int i = 0; i < 10; ++i) {
-        if(arr[i] == 0){
-            arr[i] = input;
+    for (int k = 0; k < 10; ++k) {
+        if(arr[k] == 0){
+            arr[k] = input;
+            sortarray(k);
             break;
         }
-
     }
-    sortarray();
 }
 
 int main(){
