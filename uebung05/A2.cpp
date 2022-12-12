@@ -46,7 +46,10 @@ int main(){
     for (int i = 0; i < 10; ++i){
         int input = enter_int();
         if (input == -1) return 0;
-        if (input < -1) print("Unerlaubte Eingabe!\n");
+        if (input < -1){
+            print("Unerlaubte Eingabe!\n");
+                break;
+        }
         else if (input == 0) printarr();
         else insertArray(input);
     }
