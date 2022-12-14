@@ -128,17 +128,5 @@ int main(int argc, char* argv[])
   char* arg = argv[1];
   std::cout << parseInput(arg) << std::endl;
 
-
-  //delete
-  char buf2[] = "67 55 - 54 6 / + 2 *";
-  char buf3[] = "123456789987654321";
-  char buf4[] = "2 7 * - 4 +";
-  char buf5[] = "16 2 2 4 2 /*Dies ist (k?)ein Kommentar*/ 4 2 / *";
-
-//  std::cout << parseInput(buf2) << std::endl;
-//  //std::cout << parseInput(buf3) << std::endl;
-//  //std::cout << parseInput(buf4) << std::endl;
-//  std::cout << parseInput(buf5) << std::endl;
-
   return 0;
 }

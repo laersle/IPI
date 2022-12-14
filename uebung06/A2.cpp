@@ -72,3 +72,5 @@ int main(int argc, char** argv){
 
     return 0;
 }
+
+//2b) Die Laufzeit des Algorithmus beträgt im schlechtesten Fall O(sqrt(n))
