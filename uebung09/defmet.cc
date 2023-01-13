@@ -2,6 +2,8 @@
 // Volker Reichenberger, Sommersemester 2001
 
 /* @VERBON */
+#include <iostream>
+
 class Zahl
 {
 public:
@@ -19,16 +21,34 @@ private:
   int z;
 };
 
-Zahl::Zahl() { z = 0; }
-Zahl::Zahl( const int& n )  { z = n; }
-Zahl::Zahl( const Zahl& n ) { z = n.z; }
-Zahl::~Zahl()               { }
+Zahl::Zahl() { z = 0;
+    std::cout << this << ":    Default Konstruktor" << std::endl;
+}
+Zahl::Zahl( const int& n )  { z = n;
+    std::cout << "Int Konstruktor" << std::endl;
+}
+Zahl::Zahl( const Zahl& n ) { z = n.z;
+    std::cout << "Copy Konstruktor" << std::endl;
+}
+Zahl::~Zahl() {
+    std::cout << "Destruktor" << std::endl;
+}
 Zahl& Zahl::operator=( const int& n )
-{ z=n;   return *this; }
+{
+    z=n;
+    std::cout << "Zuweisung (int-ref)" << std::endl;
+    return *this;
+}
 Zahl& Zahl::operator=( const Zahl& n )
-{ z=n.z; return *this; }
+{
+    z=n.z;
+    std::cout << "Zuweisung (Obj-ref)" << std::endl;
+    return *this; }
+
 Zahl Zahl::operator+( const Zahl& n )
-{ return Zahl(z+n.z); }
+{
+    std::cout << "Addition" << std::endl;
+    return Zahl(z+n.z); }
 
 Zahl f( Zahl a, Zahl& b) { return a+b; }
 
