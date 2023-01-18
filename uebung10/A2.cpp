@@ -1,4 +1,4 @@
-
+//!!Nur benutzt um den Code zu Überprüfen!!
 
 class A
 {
@@ -38,7 +38,7 @@ void C::Z() { };
 void B::Y()
 {
   bq = bp;
-  aq = ap;
+  //aq = ap;    //Fehler: aq ist privat
   bY();
 }
 
@@ -49,7 +49,7 @@ void C::cZ()
   cq = 3;
   X();
   Y();
-  aX();
+  //aX();       //Fehler: aX() ist privat
 }
 
 int main()
@@ -57,11 +57,11 @@ int main()
   A a; B b; C c;
 
   a.X();
-  b.bY();
+  //b.bY();     //Fehler: bY() ist privat
   c.cp = 4;
   c.bp = 1;
   c.ap = 2;
-  c.aq = 5;
+//c.aq = 5;     //Fehler: aq ist privat
 
   b.ap = c.ap;
 
